@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #2f2f2f; /* Темный фон */
+    color: white; /* Белый цвет текста */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f2f2f; /* Темный фон */
+    padding: 10px 20px;
+    color: #8a2be2; /* Фиолетовый цвет текста */
+    border-bottom: 2px solid #8a2be2; /* Фиолетовая линия снизу */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.info {
+    text-align: right;
+}
+
+.info span {
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    color: #8a2be2; /* Фиолетовый цвет заголовка */
+    margin-top: 20px;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: #3c3c3c; /* Темно-серый фон формы */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input, select, button {
+    width: calc(100% - 20px); /* Ширина с учетом отступов */
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #4c4c4c; /* Темный фон для элементов ввода */
+    border: 1px solid #8a2be2; /* Фиолетовая рамка */
+    color: white;
+    border-radius: 4px;
+    box-sizing: border-box; /* Учитывает паддинги при расчете ширины */
+}
+
+input:focus, select:focus {
+    background-color: #555555; /* Цвет при фокусе */
+    border-color: #8a2be2; /* Фиолетовый цвет рамки при фокусе */
+}
+
+button {
+    background-color: #8a2be2; /* Фиолетовый цвет кнопки */
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #7a1ab7; /* Темный фиолетовый при наведении */
+}
+
+p {
+    color: red;
+    text-align: center;
+}
+
+a {
+    color: #8a2be2; /* Фиолетовый цвет ссылок */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Подчеркнутая ссылка при наведении */
+}

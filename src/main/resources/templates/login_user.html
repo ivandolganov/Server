@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в BrainTrain</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">BrainTrain</div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="auth-container">
+        <h1 style="text-align: center;">Вход в систему</h1>
+
+        <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+        <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
+
+        <form th:action="@{/perform_login}" method="post">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="username" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Пароль</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Войти</button>
+        </form>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <p>Ещё нет аккаунта? <a href="/register" style="color: var(--primary-color);">Зарегистрируйтесь</a></p>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2023 BrainTrain. Все права защищены.</p>
+    </div>
+</footer>
+</body>
+</html>

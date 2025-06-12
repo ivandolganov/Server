@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Словарные модули</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .modules-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .module-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .module-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">BrainTrain</div>
+        <a href="/dashboard" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Назад
+        </a>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Словарные модули</h1>
+
+    <div class="modules-container">
+        <div th:each="module : ${modules}" class="module-card">
+            <h3 th:text="${module.name}">Название модуля</h3>
+            <p>Карточек: <span th:text="${module.cards.size()}">10</span></p>
+            <a th:href="@{/module/{id}(id=${module.id})}"
+               class="btn btn-primary">
+                Начать обучение
+            </a>
+        </div>
+    </div>
+</main>
+</body>
+</html>

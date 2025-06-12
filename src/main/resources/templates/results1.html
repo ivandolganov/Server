@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Результаты</title>
+  <style>
+    .result-item {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .correct {
+      background-color: #e8f5e9;
+      border-left: 5px solid #4caf50;
+    }
+    .incorrect {
+      background-color: #ffebee;
+      border-left: 5px solid #f44336;
+    }
+    .score {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+<h1>Результаты теста</h1>
+<div class="score">
+  Ваш результат: <span th:text="${score}"></span>
+</div>
+
+<div th:each="entry : ${results}" class="result-item"
+     th:class="${entry.value} ? 'correct' : 'incorrect'">
+  <img th:src="@{'/face-training/photo/' + ${entry.key}}"
+       style="max-width: 150px; max-height: 150px;">
+  <div th:if="${entry.value}">✓ Правильно</div>
+  <div th:unless="${entry.value}">
+    ✗ Неправильно (правильный ответ:
+    <span th:text="${@personNameRepository.findByPhotoId(entry.key).name}"></span>)
+  </div>
+</div>
+
+<div style="margin-top: 30px;">
+  <a href="/face-training" class="btn btn-primary">
+    Начать заново
+  </a>
+</div>
+</body>
+</html>

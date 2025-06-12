@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">BrainTrain</div>
+        <a href="/vocabulary" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Назад
+        </a>
+    </div>
+</header>
+
+<main class="container">
+    <div class="results-container" style="text-align: center; margin-top: 50px;">
+        <h1>Результаты модуля: <span th:text="${module.name}"></span></h1>
+
+        <div style="font-size: 24px; margin: 30px 0;">
+            Вы знаете <span th:text="${knownCount}" style="color: #4361ee; font-weight: bold;"></span>
+            из <span th:text="${totalCount}"></span> слов
+        </div>
+
+        <div style="width: 300px; height: 300px; margin: 0 auto; position: relative;">
+            <!-- Здесь можно добавить круговую диаграмму -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <span style="font-size: 48px; color: #4361ee;"
+                          th:text="${(knownCount * 100 / totalCount)} + '%'"></span>
+            </div>
+        </div>
+
+        <a th:href="@{/module/{id}(id=${module.id})}"
+           class="btn btn-primary" style="margin-top: 30px;">
+            Повторить модуль
+        </a>
+    </div>
+</main>
+</body>
+</html>

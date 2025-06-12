@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainTrain - Развитие когнитивных навыков</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -50px;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .cta-section {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="logo">BrainTrain</div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Развивайте когнитивные навыки эффективно</h1>
+        <p class="lead">Инновационная платформа для тренировки памяти, внимания и словарного запаса</p>
+        <div style="margin-top: 30px;">
+            <a href="/login_user" class="btn btn-primary">Войти</a>
+            <a href="/register" class="btn btn-secondary" style="margin-left: 15px;">Регистрация</a>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <section class="features">
+        <div class="feature-card">
+            <h3>📚 Лексика</h3>
+            <p>Система интервальных повторений для эффективного запоминания слов</p>
+        </div>
+        <div class="feature-card">
+            <h3>🧠 Память</h3>
+            <p>Упражнения для развития кратковременной и долговременной памяти</p>
+        </div>
+        <div class="feature-card">
+            <h3>👥 Группы</h3>
+            <p>Совместное обучение и соревновательные режимы</p>
+        </div>
+    </section>
+</div>
+
+<section class="cta-section">
+    <div class="container">
+        <h2>Готовы улучшить свои навыки?</h2>
+        <p>Присоединяйтесь к тысячам пользователей по всему миру</p>
+        <a href="/register" class="btn btn-primary" style="margin-top: 20px;">Начать бесплатно</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2023 BrainTrain. Все права защищены.</p>
+    </div>
+</footer>
+</body>
+</html>

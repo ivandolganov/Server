@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: training
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/MobileAppDB
+    username: root
+    password: "1234"
+    driver-class-name: org.postgresql.Driver
+  security:
+    user:
+      name: "123"
+      password: "123"
+
+jwt:
+  secret: "G3p7q9t8w2z5C4F1H2J3K4L5M6N7O8P9Q0R1S2T3U4V5W6X7Y8Z9A0B1C2D3E4F5G6H7J8K9L0M1N2O3P4Q5R6S7T8U9V0W1X2Y3Z4"
+  expiration: 604800000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html   # URL ??? Swagger UI
+    tags-sorter: alpha       # ?????????? ????? ?? ????????
+    operations-sorter: alpha # ?????????? ????????
+    enabled: true
+  api-docs:
+    enabled: true
+    path: /v3/api-docs       # ???? ??? JSON-???????? API
+  default-produces-media-type: application/json # ?????? ?????? ?? ?????????
+
+#logging:
+#  level:
+#    org.springframework: debug  # ???? Spring
+#    org.springdoc: debug        # ???? Swagger
+server:
+  port: 8080
+  address: 0.0.0.0
